@@ -2,6 +2,8 @@ var express = require("express");
 var bodyParser = require("body-parser");
 
 var app = express();
+
+// PORT is either the port provided by Heroku via process.env.PORT or 8080.
 var PORT =  process.env.PORT || 8080;
 
 
