@@ -2,15 +2,13 @@
 
 ### Overview
 
-In this activity, you'll build a compatibility-based "FriendFinder" application -- basically a dating app. This full-stack site will take in results your users' surveys, then compare their answers with those from other users. The app will then display the name and picture of the user with the best overall match.
+"FriendFinder" is a compatibility-based node application -- basically a dating app. This full-stack site will take in results your users' surveys, then compare their answers with those from other users. The app will then display the name and picture of the user with the best overall match.
 
-You will use Express to handle routing. Make sure you deploy your app to Heroku so other users can fill it out.
+Express is used to handle routing.
 
-### Before You Begin
+### Demo & File Structure
 
-* Check out [this demo version of the site](https://friend-finder.herokuapp.com/). Use this as a model for how we expect your assignment look and operate.
-
-* Create a folder called `FriendFinder`. Inside the folder, organize your directories so it matches the following:
+* Create a folder called `FriendFinder`. Inside the folder, organize the directories so it matches the following:
 
   ```
   FriendFinder
@@ -28,23 +26,25 @@ You will use Express to handle routing. Make sure you deploy your app to Heroku 
     - server.js
   ```
 
+* ![Demo](demo.gif)
+
 ### Instructions
 
-1. Your survey should have 10 questions of your choosing. Each answer should be on a scale of 1 to 5 based on how much the user agrees or disagrees with a question.
+1. The survey should have 10 questions. Each answer should be on a scale of 1 to 5 based on how much the user agrees or disagrees with a question.
 
-2. Your `server.js` file should require the basic npm packages we've used in class: `express`, `body-parser` and `path`.
+2. The `server.js` file should require the following npm packages: `express`, `body-parser` and `path`.
 
-3. Your `htmlRoutes.js` file should include two routes:
+3. The `htmlRoutes.js` file should include two routes:
 
    * A GET Route to `/survey` which should display the survey page.
    * A default USE route that leads to `home.html` which displays the home page.
 
-4. Your `apiRoutes.js` file should contain two routes:
+4. The `apiRoutes.js` file should contain two routes:
 
    * A GET route with the url `/api/friends`. This will be used to display a JSON of all possible friends.
    * A POST routes `/api/friends`. This will be used to handle incoming survey results. This route will also be used to handle the compatibility logic.
 
-5. You should save the data in your app as an array of objects. Each of these objects should roughly follow the format below.
+5. Save the data in the app as an array of objects. Each of these objects should roughly follow the format below.
 
 ```json
 {
@@ -76,5 +76,5 @@ You will use Express to handle routing. Make sure you deploy your app to Heroku 
    * Remember to use the absolute value of the differences. Put another way: no negative solutions! Your app should calculate both `5-3` and `3-5` as `2`, and so on.
    * The closest match will be the user with the least amount of difference.
 
-7. Once you've found the current user's most compatible friend, display the result as a modal pop-up.
-   * The modal should display both the name and picture of the closest match.
+7. Once the current user's most compatible friend is determined, the result is displayed as a modal pop-up.
+   * The modal includes both the name and picture of the closest match.
